@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// use Illuminate\Routing\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('ujian','ujianController');

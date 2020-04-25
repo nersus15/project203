@@ -1,5 +1,6 @@
 <?php
 
+use App\ujian;
 use Illuminate\Http\Request;
 
 /*
@@ -15,4 +16,23 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+/**
+ * @return Illuminate\Http\Response
+ */
+Route::get('/getAll', function(){
+    $data = ujian::all();
+    return response($data);
+});
+
+/**
+ * @param  int  $id
+ * @return Illuminate\Http\Response
+ */
+
+Route::get('/get/{id}', function($id){
+    $data = ujian::find($id);
+    return response($data);
 });
