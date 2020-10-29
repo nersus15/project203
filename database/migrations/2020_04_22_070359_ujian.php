@@ -17,8 +17,8 @@ class Ujian extends Migration
         //
         Schema::create('ujian', function(Blueprint $tabel){
             $tabel->integerIncrements('id');
-            $tabel->string('nama_mk', 50);
-            $tabel->string('dosen', 50);
+            $tabel->string('nama_mk', 150);
+            $tabel->string('dosen', 150);
             $tabel->integer('jumlah_soal');
             $tabel->text('keterangan');
             $tabel->date('created_at')->default(date('Y-m-d'));
